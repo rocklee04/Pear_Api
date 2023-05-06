@@ -1,17 +1,19 @@
 const express = require("express")
 const {connection} =require("./db")
+const cors = require('cors')
 const {userRouter} = require("./routes/User.routes")
 const {ProductModel} = require("./model/Product.model")
 const {auth} = require("./middleware/auth.middleware")
 const {productRouter} = require("./routes/Product.routes")
-const cors = require('cors')
+
 require('dotenv').config() 
 const swaggerJsdoc = require("swagger-jsdoc")
 const swaggerUi = require("swagger-ui-express")
+app.use(cors())
 
 const app = express()
 
-app.use(cors())
+
 app.use(express.json());
 
 
