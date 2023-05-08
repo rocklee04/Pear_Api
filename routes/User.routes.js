@@ -48,6 +48,7 @@ const userRouter = express.Router();
 *               description: Bad request. An error occurred while registering the user.
 */
 userRouter.post("/register",async (req, res) => {
+    console.log(req.headers)
     const {email, password, name} = req.body
     try {
         bcrypt.hash(password, 5,async (err, hash) => {

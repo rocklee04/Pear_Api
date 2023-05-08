@@ -11,7 +11,12 @@ const swaggerUi = require("swagger-ui-express")
 
 const app = express()
 
-app.use(cors())
+var corsOptions = {
+  origin: 'https://jealous-hare-umbrella.cyclic.app',
+  optionsSuccessStatus: 200 
+}
+
+app.use(cors(corsOptions))
 app.use(express.json());
 
 
